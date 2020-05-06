@@ -8,7 +8,55 @@ I/flutter (25091): 'package:charts_common/src/chart/layout/layout_config.dart': 
 I/flutter (25091): '_minPixel < totalPixels': is not true.
 ```
 
-## To reproduce
+## To test the fix checkout 
+Clone this repo recursively (charts_flutter is a submodule) and
+checkout test_fix_issue_456_minPixel_LT_totalPixels:
+```
+wink@wink-desktop:~/prgs/flutter/projects
+$ git clone --recursive git@github.com:winksaville/charts_issue_minPixel_LT_totalPixels.git -b test_fix_issue_456_minPixel_LT_totalPixels
+Cloning into 'charts_issue_minPixel_LT_totalPixels'...
+remote: Enumerating objects: 122, done.
+remote: Counting objects: 100% (122/122), done.
+remote: Compressing objects: 100% (91/91), done.
+remote: Total 122 (delta 7), reused 122 (delta 7), pack-reused 0
+Receiving objects: 100% (122/122), 78.08 KiB | 898.00 KiB/s, done.
+Resolving deltas: 100% (7/7), done.
+Submodule 'submodules/charts' (https://github.com/winksaville/charts.git) registered for path 'submodules/charts'
+Cloning into '/home/wink/prgs/flutter/projects/charts_issue_minPixel_LT_totalPixels/submodules/charts'...
+remote: Enumerating objects: 12, done.        
+remote: Counting objects: 100% (12/12), done.        
+remote: Compressing objects: 100% (11/11), done.        
+remote: Total 3017 (delta 0), reused 6 (delta 0), pack-reused 3005        
+Receiving objects: 100% (3017/3017), 4.86 MiB | 6.67 MiB/s, done.
+Resolving deltas: 100% (1452/1452), done.
+Submodule path 'submodules/charts': checked out 'aa5a50fd5fcdb4bd9b18ce9731f82a228b810420'
+
+wink@wink-desktop:~/prgs/flutter/projects
+$ cd submodules/charts/
+
+wink@wink-desktop:~/prgs/flutter/projects/charts_issue_minPixel_LT_totalPixels (test_fix_issue_456_minPixel_LT_totalPixels)
+$ flutter run -d moto
+Running "flutter pub get" in charts_issue_minPixel_LT_totalPixels...         0.4s
+Launching lib/main.dart on moto x4 in debug mode...
+Running Gradle task 'assembleDebug'...                                  
+Running Gradle task 'assembleDebug'... Done                        21.5s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk.
+Installing build/app/outputs/flutter-apk/app.apk...                 5.9s
+Waiting for moto x4 to report its views...                          10ms
+Syncing files to device moto x4...                                 560ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h Repeat this help message.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+An Observatory debugger and profiler on moto x4 is available at: http://127.0.0.1:37217/vX_QeMsOGNs=/
+
+Application finished.
+```
+## To reproduce checkout mater
 
 Clone this repo recursively (charts_flutter is a submodule):
 ```
